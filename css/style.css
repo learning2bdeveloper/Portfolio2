@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+body {
+  height: 100svh;
+  background-color: #222222;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2% 1% 2%;
+  container-type: inline-size;
+  container-name: sheesh;
+}
+
+.user-card {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user-container {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 10px;
+  background-color: #3d3633;
+  border: 2px solid #3d3633;
+}
+
+@container sheesh (max-width: 700px) {
+  /* need to be last to not be overriden*/
+  .user-card {
+    width: 240px;
+    height: 70px;
+  }
+
+  .user-container > .user-name {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+}
+
+.active {
+  border: 2px solid #ef8661;
+}
+
+.user-container > *,
+.not-listed {
+  color: #d1cbc7;
+}
+
+.image-container {
+  height: clamp(2.8rem, 2vh, 4rem);
+  width: clamp(2.8rem, 2vw, 4rem);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #544e4b;
+}
+
+.image-container > i {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+.not-listed {
+  font-size: 0.7rem;
+  margin-inline-start: 0.5rem;
+}
+
+#date {
+  color: #d1cbc7;
+}
